@@ -13,9 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/movie/:id" element={<Detail/>} />
-      </Routes>
-      <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path={`${process.env.PUBLIC_URL}/`} element={<Home/>} />
       </Routes>
     </BrowserRouter>
   )
