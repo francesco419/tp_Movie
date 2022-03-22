@@ -1,0 +1,35 @@
+.hide {
+  display: flex;
+  background-color: #2b2d2f;
+  width: 500px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-bottom: 50px;
+  color: white;
+  border-radius: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.Links {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.imgbox {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.MovieInfo {
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+}
+
+.MovieDiv {
+  height: 100%;
+  padding: 20px;
+  align-items: center;
+}

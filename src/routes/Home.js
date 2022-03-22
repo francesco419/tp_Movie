@@ -1,9 +1,8 @@
 import {useState, useEffect} from "react";
-
 import Movie from "../components/Movie";
 import Loading from "../components/Loading";
-
 import styles from "./Home.module.css";
+import Switch from "../components/Switch";
 
 
 function Home() {
@@ -50,6 +49,9 @@ function Home() {
                 <button className={styles.slidebutton} onClick={MoveToLeft}>Next</button>
             </div>
         </div>
+        <Switch
+        place={true}
+        />
       </div>
   )
 }

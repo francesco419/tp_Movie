@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+https://francesco419.github.io/tp_Movie
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+이번 프로젝트는 React의 사용 및 React의 Routes, state, useEffect 등을 사용하여 React에 대한 사용 이해도를 높이고
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+===1st===
 
-### `npm start`
+https://yts.mx/api/v2/list_movies.json?minimum_rating=8.5&sort_by=year의 페이지에서 await fetch를 통해 영화 데이터를 읽어 들여옴
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+useState를 통해 state를 생성 및 제어, useEffect를 통해 불필요한 랜더링 횟수를 최소화 함.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+component폴더의 Movie.js를 생성하여 Home.js에서의 영화데이터를 매개변수로 받아 생성하는 컴포넌트를 생성.
 
-### `npm test`
+Loading state를 통해 데이터를 화면에 출력하기 전까지의 loading문구를 표시함.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+===2nd===
+전반적으로 html구조와 css스타일에 대한 작업을 주로 진행, css작업은 js파일에 대한 css module파일을 제작.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Home에서 보여지는 슬라이드 구조와같은 작업은, 옆으로 연속적으로 나열된 Movie컴포넌트를
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    overflow:hidden
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+을 통해 사용해 보이고자 하는 부분을 제외한 부분들이 페이지에서 안보이도록 하였고,
 
-### `npm run eject`
+    transform: `translateX(${move}px)`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+을 state와 button을 이용해, 한번의 클릭시마다 Movie컴포넌트 한개의 width만큼 이도하도록 하였고,
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    transition:`transform 1.5s`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+을 사용해 부드러운 움직임이 보이도록 했다.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Movie컴포넌트에서의 summary의 길이, 장르 구분 등의 편의성을 위한 세부조정 하였다.
 
-## Learn More
+Home에서 보여지는 각 영화에 대한 자세한 페이지를 만들기 위해 Detail파일 추가, 좀더 세부적인 설명을 포함하고 있다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+===3rd===
 
-### Code Splitting
+Loading파일을 생성해 새로운 컴포넌트를 만들었고, Home과 Detail에서 각 정보를 불러오기 전에 사용된다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Home, Detail css 수정.
 
-### Analyzing the Bundle Size
+Home 혹은 Detail의 한개의 정보만 보여주는 페이지 이외에 여러가지 정보를 한번에 볼수 있도록 TableView.js를 생성.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+===4th===
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Switch.js을 생성하여 Home과 TableView간의 이동이 가능하도록 함.
 
-### Advanced Configuration
+    <button className={styles.icon} alt="Change View">
+        <Link to={place ? `/movie/tableview` : `/tp_Movie`}>
+            //아이콘
+        </Link>
+    </button>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+컴포넌트가 받는 매개변수를 Home에서는 true를 TableView에서는 false를 주어 각각의 페이지에서 작동되는 기능이 다르도록 설정한다.
 
-### Deployment
+Link와 버튼을 이용하여 Detail페이지에서 Home으로 돌아가는 버튼 추가.(아이콘을 사용하지 않고 이미지를 추가하여 만들어봄)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+TableView에서 TableMovie컴포넌트가 상위 parent속성의 범위를 벗어나는 문제점 발생. height를 일정이상 낮추거나 높이면 화면 밖으로 contents가 나가는 현상이 발생.
 
-### `npm run build` fails to minify
+    flex-wrap: wrap
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+을 사용하여도 div안에 속해있지 못함. 이에대한 해결책 필요.

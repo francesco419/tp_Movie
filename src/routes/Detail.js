@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import {Link} from "react-router-dom";
 import Loading from "../components/Loading";
 import styles from "./Detail.module.css";
+import returnimg from "../components/back.png";
 
 function Detail(){
     const {id} = useParams();
@@ -22,28 +23,37 @@ function Detail(){
         <div className={styles.no}>
             {loading ? (<Loading/>) : (
                 <div>
-                    <img src={movie.medium_cover_image} atl="title"/>
-                    <h2>
-                        {movie.title}({movie.year})
-                    </h2>
-                    <div className={styles.things}>
-                    <h2>
-                        <p>
-                            Rating : {movie.rating}
-                        </p>
-                        <p>
-                            Runtime : {movie.runtime}
-                        </p> 
-                    </h2>
-                    <div className={styles.summary}>
-                        <h2>-Summary-</h2>
-                        {movie.description_full}
-                    </div>
-                    </div>
+                    <button className={styles.return}>
+                        <Link to={`/tp_Movie`}>
+                            <img src={returnimg}/>
+                        </Link>
+                    </button>
                     <div>
-                        <a href={movie.url} className={styles.Links}>Click For More Info</a>
+                        <img src={movie.medium_cover_image} atl="title"/>
+                        <h2>
+                            {movie.title}({movie.year})
+                        </h2>
+                        <div className={styles.things}>
+                        <h2>
+                            <p>
+                                Rating : {movie.rating}
+                            </p>
+                            <p>
+                                Runtime : {movie.runtime}
+                            </p> 
+                        </h2>
+                        <div className={styles.summary}>
+                            <h2>-Summary-</h2>
+                            <div>
+                                {movie.description_full}
+                            </div>
+                        </div>
+                        </div>
+                        <div>
+                            <a href={movie.url} className={styles.Links}>Click For More Info</a>
+                        </div>
                     </div>
-                </div>
+                </div> 
             )}
         </div>
     )

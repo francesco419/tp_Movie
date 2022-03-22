@@ -1,5 +1,8 @@
 import {useState, useEffect} from "react";
-import Movie from "../components/Movie";
+import Switch from "../components/Switch";
+import TableMovie from "../components/TableMovie";
+import styles from "./TableView.module.css";
+import Loading from "../components/Loading";
 
 function TableView() {
   const [loading,setLoading] = useState(true);
@@ -15,24 +18,25 @@ function TableView() {
   },[])
 
   return (
-    <div style="display:flex;">
-      {loading ? (
-          <h1> ...loading</h1>
-          ) : (
-            <div>
-        {movies.map((movie)=>(
-        <Movie
-          CoverImg={movie.medium_cover_image}
-          key={movie.id}
-          id={movie.id}
-          title={movie.title} 
-          genres={movie.genres} 
-          summary={movie.summary}
-        />
-        ))}
+      <div className={styles.part1}>
+        {loading ? (<Loading/>) : (
+        <div className={styles.part2}>
+          {movies.map((movie)=>(
+            <TableMovie
+            CoverImg={movie.medium_cover_image}
+            key={movie.id}
+            id={movie.id}
+            title={movie.title} 
+            genres={movie.genres} 
+            summary={movie.summary}
+            />
+          ))}
         </div>
-      )}
-    </div>
+        )}
+        <Switch
+          place={false}
+        />
+      </div>  
   )
 }
 

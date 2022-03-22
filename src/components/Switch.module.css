@@ -1,0 +1,22 @@
+.icon {
+  position: fixed;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #2b2d2f;
+  color: white;
+}
+
+.icon :hover {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+  opacity: 0.6;
+}
+
+.fai {
+  position: relative;
+  color: white;
+}
