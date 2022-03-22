@@ -1,8 +1,20 @@
 .hide {
   display: flex;
-  background-color: #d3d3d3;
+  background-color: #3d3d3b;
   height: 690px;
   border-radius: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  font-size: 30px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.Links {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .imgbox {

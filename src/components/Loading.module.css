@@ -1,0 +1,20 @@
+.outbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+  text-align: center;
+  animation: balls 400ms ease Infinite Alternate;
+}
+
+@keyframes balls {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}

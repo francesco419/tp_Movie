@@ -11,8 +11,9 @@ function Movie({id, CoverImg, title, genres, summary}){
         <div className={styles.MovieInfo}>
             <div className={styles.MovieDiv}>
                 <div>
-                    <h2><Link to={`/movie/${id}`}>{title}</Link></h2>
+                    <h2><Link className={styles.Links} to={`/movie/${id}`}>{title}</Link></h2>
                     <p>-{summary.length>300 ? `${summary.slice(0,300)}...` : summary}</p>
+                    <div>-Genres-</div>
                     <ul>
                         {genres.map((g)=>(<li key={g}>{g}</li>))}
                     </ul>

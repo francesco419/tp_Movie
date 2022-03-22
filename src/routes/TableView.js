@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import Movie from "../components/Movie";
 
-function Home() {
+function TableView() {
   const [loading,setLoading] = useState(true);
   const [movies, setMovie] = useState([]);
   const getMovies = async()=>{
@@ -36,4 +36,4 @@ function Home() {
   )
 }
 
-export default Home;
+export default TableView;
