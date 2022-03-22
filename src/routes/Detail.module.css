@@ -1,0 +1,16 @@
+.no {
+  border: 0;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgba(9, 10, 8, 0.781);
+  font: bold 1.25rem/1 poppins;
+  color: white;
+  width: 1000px;
+  padding: 20px;
+}
+
+.summary {
+  width: 80%;
+  margin-left: 100px;
+  margin-bottom: 50px;
+}

@@ -1,0 +1,63 @@
+.totalbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid;
+  background-color: #3d3d3b;
+  border-radius: 15px;
+  width: 1300px;
+  height: 1000px;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+  width: 1010px;
+  overflow: hidden;
+}
+
+.container2 {
+  display: flex;
+}
+
+.load {
+  position: absolute;
+  justify-content: center;
+  font-size: 100px;
+  color: white;
+}
+
+.container3 {
+  display: flex;
+  width: 1000px;
+  height: 100%;
+  margin-right: 50px;
+  transition-property: translate;
+  transition-duration: 1s;
+}
+
+.buttondiv {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: inherit;
+}
+
+.slidebutton {
+  height: 60px;
+  width: 200px;
+  background: #2b2d2f;
+  text-align: center;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 4px;
+  font: bold 1.25rem/1 poppins;
+  color: #71dfbe;
+  top: 50%;
+  left: 0;
+  right: 0;
+}

@@ -1,0 +1,25 @@
+.hide {
+  display: flex;
+  background-color: #d3d3d3;
+  height: 690px;
+  border-radius: 10px;
+}
+
+.imgbox {
+  height: 690px;
+  width: 460px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.MovieInfo {
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+}
+
+.MovieDiv {
+  height: 100%;
+  padding: 20px;
+  align-items: center;
+}
