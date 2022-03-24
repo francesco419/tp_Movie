@@ -68,3 +68,5 @@ TableView에서 TableMovie컴포넌트가 상위 parent속성의 범위를 벗�
     flex-wrap: wrap
 
 을 사용하여도 div안에 속해있지 못함. 이에대한 해결책 필요.
+
+비슷한 컴포넌트 Movie.js와 TableMovie.js가 존재함. 하나의 JS파일에 상황에 따라 2개의 CSS파일을 적용시키는 방법이 있는지 찾게되면 JS파일을 하나 줄일 수 있다.
